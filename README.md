@@ -11,7 +11,7 @@ Use this when you have:
 then put this Python file in the same directory as your VCD file, and run the command `python VCD_Viewer.py filename` in the command line.
 
 ## Example
-I'll take the vcd file `JK.vcd` as an example. Enter `python VCD_Viewer.py JK.vcd` in your command line, and a plot like this would be shown:
+I'll take the vcd file `JK.vcd` in the folder `example-vcd` as an example. Enter `python VCD_Viewer.py .\example-vcd\JK.vcd` in your command line, and a plot like this would be shown:
 
 ![results](https://user-images.githubusercontent.com/94591149/233064318-346bf6db-7777-4f7d-a475-8c4526907860.png)
 
