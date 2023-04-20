@@ -134,7 +134,7 @@ class VCD_Parser:
             elif self.vcd_content[self.__content_index] == '$end':
                 first_time = False
             elif match_time is not None:
-                temp_time = int(match_time.group(1))
+                temp_time = int(f"0{match_time.group(1)}")
                 if not first_time:
                     for index in range(current_time, temp_time):
                         for value in self.signals.values():
@@ -146,7 +146,14 @@ class VCD_Parser:
                     self.signals[match_signal.group(2)]['signal'].append(match_signal.group(1))
                 else:
                     self.signals[match_signal.group(2)]['signal'][current_time] = match_signal.group(1)
+            elif re.match('b\d+', self.vcd_content[self.__content_index]) is not None and re.match('\S+', self.vcd_content[self.__content_index + 1]):
+                if first_time:
+                    self.signals[self.vcd_content[self.__content_index + 1]]['signal'].append(f'0{self.vcd_content[self.__content_index]}')
+                else:
+                    self.signals[self.vcd_content[self.__content_index + 1]]['signal'][current_time] = f'0{self.vcd_content[self.__content_index]}'
+                self.__content_index += 1
             else:
+                print(self.vcd_content[self.__content_index])
                 raise LookupError(f'{self.vcd_content[self.__content_index]} does not match time or signal')
             self.__content_index += 1
         self.header_info['signal_len'] = self.signal_len
