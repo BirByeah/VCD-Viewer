@@ -1,1 +1,107 @@
+$date
+	Thu Apr 20 09:38:55 2023
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ns
+$end
 
+$scope module tb_sd_moore $end
+$var parameter 32 ! PERIOD $end
+$var parameter 2 " s0 $end
+$var reg 1 # clk $end
+$var reg 1 $ seq $end
+$var wire 1 % saw $end
+
+$scope module u_sd_moore $end
+$var parameter 2 & s0 $end
+$var parameter 2 ' s1 $end
+$var parameter 2 ( s2 $end
+$var wire 1 ) clk $end
+$var wire 1 * seq $end
+$var reg 1 + saw $end
+$var reg 2 , state [1:0] $end
+$var reg 2 - nstate [1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0#
+0$
+0+
+b0 ,
+b1 -
+b100 !
+b0 "
+b0 &
+b1 '
+b10 (
+0%
+0*
+0)
+$end
+#2
+1#
+1)
+b1 ,
+#3
+1$
+1*
+b10 -
+#4
+0#
+0)
+#6
+1#
+1)
+b10 ,
+1+
+1%
+#8
+0#
+0)
+#9
+0$
+0*
+b1 -
+#10
+1#
+1)
+b1 ,
+0+
+0%
+#12
+0#
+0)
+#13
+1$
+1*
+b10 -
+#14
+1#
+1)
+b10 ,
+1+
+1%
+#15
+0$
+0*
+b1 -
+#16
+0#
+0)
+#18
+1#
+1)
+b1 ,
+0+
+0%
+#20
+0#
+0)
+#22
+1#
+1)
